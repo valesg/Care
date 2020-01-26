@@ -15,6 +15,17 @@
 		E976B51323D7DD4B004023F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E976B51123D7DD4B004023F7 /* LaunchScreen.storyboard */; };
 		E976B51E23D7DD4B004023F7 /* CareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B51D23D7DD4B004023F7 /* CareTests.swift */; };
 		E976B52923D7DD4B004023F7 /* CareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B52823D7DD4B004023F7 /* CareUITests.swift */; };
+		E976B53723D7DE21004023F7 /* OnCallReplacementStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B53623D7DE21004023F7 /* OnCallReplacementStaff.swift */; };
+		E976B53923D7DE4A004023F7 /* CareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B53823D7DE4A004023F7 /* CareRequest.swift */; };
+		E976B53B23D7DE69004023F7 /* PatientLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B53A23D7DE69004023F7 /* PatientLocator.swift */; };
+		E976B53D23D7DEB5004023F7 /* MemberManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B53C23D7DEB5004023F7 /* MemberManagement.swift */; };
+		E976B53F23D7DF3A004023F7 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B53E23D7DF3A004023F7 /* AppView.swift */; };
+		E976B54123D7E05A004023F7 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54023D7E05A004023F7 /* AppSettings.swift */; };
+		E976B54323D7EBEE004023F7 /* PatientMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54223D7EBEE004023F7 /* PatientMonitor.swift */; };
+		E976B54523DC896A004023F7 /* CareRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54423DC896A004023F7 /* CareRequestData.swift */; };
+		E976B54723DC9626004023F7 /* CareRequestDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54623DC9626004023F7 /* CareRequestDetail.swift */; };
+		E976B54923DCC4A1004023F7 /* OnCallStaffData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54823DCC4A1004023F7 /* OnCallStaffData.swift */; };
+		E976B54B23DCF171004023F7 /* OnCallStaffDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976B54A23DCF171004023F7 /* OnCallStaffDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,18 @@
 		E976B52423D7DD4B004023F7 /* CareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E976B52823D7DD4B004023F7 /* CareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareUITests.swift; sourceTree = "<group>"; };
 		E976B52A23D7DD4B004023F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E976B53623D7DE21004023F7 /* OnCallReplacementStaff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCallReplacementStaff.swift; sourceTree = "<group>"; };
+		E976B53823D7DE4A004023F7 /* CareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareRequest.swift; sourceTree = "<group>"; };
+		E976B53A23D7DE69004023F7 /* PatientLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientLocator.swift; sourceTree = "<group>"; };
+		E976B53C23D7DEB5004023F7 /* MemberManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManagement.swift; sourceTree = "<group>"; };
+		E976B53E23D7DF3A004023F7 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		E976B54023D7E05A004023F7 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		E976B54223D7EBEE004023F7 /* PatientMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMonitor.swift; sourceTree = "<group>"; };
+		E976B54423DC896A004023F7 /* CareRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareRequestData.swift; sourceTree = "<group>"; };
+		E976B54623DC9626004023F7 /* CareRequestDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareRequestDetail.swift; sourceTree = "<group>"; };
+		E976B54823DCC4A1004023F7 /* OnCallStaffData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCallStaffData.swift; sourceTree = "<group>"; };
+		E976B54A23DCF171004023F7 /* OnCallStaffDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnCallStaffDetail.swift; sourceTree = "<group>"; };
+		E976B54C23DCF647004023F7 /* Care.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Care.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +102,17 @@
 		E976B4FA23D7DD49004023F7 = {
 			isa = PBXGroup;
 			children = (
+				E976B54823DCC4A1004023F7 /* OnCallStaffData.swift */,
+				E976B53623D7DE21004023F7 /* OnCallReplacementStaff.swift */,
+				E976B54A23DCF171004023F7 /* OnCallStaffDetail.swift */,
+				E976B54423DC896A004023F7 /* CareRequestData.swift */,
+				E976B53823D7DE4A004023F7 /* CareRequest.swift */,
+				E976B54623DC9626004023F7 /* CareRequestDetail.swift */,
+				E976B53A23D7DE69004023F7 /* PatientLocator.swift */,
+				E976B53C23D7DEB5004023F7 /* MemberManagement.swift */,
+				E976B54223D7EBEE004023F7 /* PatientMonitor.swift */,
+				E976B54023D7E05A004023F7 /* AppSettings.swift */,
+				E976B53E23D7DF3A004023F7 /* AppView.swift */,
 				E976B50523D7DD4A004023F7 /* Care */,
 				E976B51C23D7DD4B004023F7 /* CareTests */,
 				E976B52723D7DD4B004023F7 /* CareUITests */,
@@ -99,6 +133,7 @@
 		E976B50523D7DD4A004023F7 /* Care */ = {
 			isa = PBXGroup;
 			children = (
+				E976B54C23DCF647004023F7 /* Care.entitlements */,
 				E976B50623D7DD4A004023F7 /* AppDelegate.swift */,
 				E976B50823D7DD4A004023F7 /* SceneDelegate.swift */,
 				E976B50A23D7DD4A004023F7 /* ContentView.swift */,
@@ -267,9 +302,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E976B53723D7DE21004023F7 /* OnCallReplacementStaff.swift in Sources */,
+				E976B54923DCC4A1004023F7 /* OnCallStaffData.swift in Sources */,
 				E976B50723D7DD4A004023F7 /* AppDelegate.swift in Sources */,
+				E976B54523DC896A004023F7 /* CareRequestData.swift in Sources */,
 				E976B50923D7DD4A004023F7 /* SceneDelegate.swift in Sources */,
 				E976B50B23D7DD4A004023F7 /* ContentView.swift in Sources */,
+				E976B54723DC9626004023F7 /* CareRequestDetail.swift in Sources */,
+				E976B53F23D7DF3A004023F7 /* AppView.swift in Sources */,
+				E976B54123D7E05A004023F7 /* AppSettings.swift in Sources */,
+				E976B54323D7EBEE004023F7 /* PatientMonitor.swift in Sources */,
+				E976B53B23D7DE69004023F7 /* PatientLocator.swift in Sources */,
+				E976B53923D7DE4A004023F7 /* CareRequest.swift in Sources */,
+				E976B54B23DCF171004023F7 /* OnCallStaffDetail.swift in Sources */,
+				E976B53D23D7DEB5004023F7 /* MemberManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Care/Care.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Care/Preview Content\"";
 				DEVELOPMENT_TEAM = 2E6MX2E968;
@@ -443,6 +490,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metcove.Care;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Care/Care.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Care/Preview Content\"";
 				DEVELOPMENT_TEAM = 2E6MX2E968;
@@ -463,6 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.metcove.Care;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
