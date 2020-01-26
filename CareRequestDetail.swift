@@ -11,8 +11,11 @@ import SwiftUI
 struct CareRequestDetail: View {
     let careRequest: CareRequestRecord
     var body: some View {
-        Text("Hello! View details on selected Care Request")
+        NavigationView {
+        Text("Hello! View details on selected Care Request. Details may include patient ID, requestor ID, full address, special comments etc.")
     }
+        .navigationBarTitle(Text("Care Request Details"))
+}
 }
 
 struct CareRequestDetail_Previews: PreviewProvider {
