@@ -12,11 +12,14 @@ struct OnCallStaffDetail: View {
     var body: some View {
         NavigationView {
         VStack () {
+            Image("CareNotification")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
           Text("Select OnCall caregivers and submit request. Caregivers receive notifications and may opt to accept or decline OnCall invite. Managers can track progress.")
         }
         
     }
-        .navigationBarTitle(Text("How it Works?"))
+        .navigationBarTitle(Text("OnCall Easy"))
 }
 }
 struct OnCallStaffDetail_Previews: PreviewProvider {
