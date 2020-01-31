@@ -18,7 +18,7 @@ struct AppView: View {
             OnCallReplacementStaff(allOnCallCandidates: onCallStaffTestData).tabItem({
                 Image(systemName: "plus.circle")
                     .font(.title)
-                Text("OnCall")
+                Text("OnCall Group")
             }).tag(1)
             
                 CareRequest(careRequests: testData).tabItem({
@@ -27,12 +27,12 @@ struct AppView: View {
                 Text("Care Request")
             }).tag(2)
 
-            PatientMonitor().tabItem({
+            PatientMonitor(allPatientMonitorCandidates: patientMonitorTestData).tabItem({
                 Image(systemName: "eye")
                     .font(.title)
                 Text("Patient Monitor")
             }).tag(3)
-            MemberManagement().tabItem({
+            SignIn().tabItem({
                 Image(systemName: "person")
                     .font(.title)
                 Text("Member")

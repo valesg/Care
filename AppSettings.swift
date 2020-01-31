@@ -22,18 +22,18 @@ struct AppSettings: View {
                     Text(" ")
                     
                     Toggle(isOn: $sameGender) {
-                    Text("My caregiver's gender must be the same as Me")
+                    Text("Caregiver's gender must be the same as patient")
                     }
                     
                     Toggle(isOn: $onDuty) {
-                        Text("On Duty (as Caregiver)")
+                        Text("On Duty")
                     }
                     Toggle(isOn: $haveCar) {
-                        Text("Caregiver has a car")
+                        Text("Have a car")
                     }
-                    Toggle(isOn: $myOrg) {
-                        Text("Only notify staff of care manager")
-                    }
+//                    Toggle(isOn: $myOrg) {
+//                        Text("Only notify staff of care manager")
+//                    }
                     Text(" ")
                     if haveCar && onDuty {
                         Text("Fantastic. You have a car and are on duty. Thank your for your participation in CareDrum.")

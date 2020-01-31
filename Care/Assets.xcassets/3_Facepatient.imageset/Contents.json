@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "NurseFaceBlack.jpg",
+      "filename" : "Facepatient3.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Facepatient3-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Facepatient3-2.jpg",
       "scale" : "3x"
     }
   ],

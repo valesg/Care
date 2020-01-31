@@ -9,25 +9,46 @@
 import SwiftUI
 
 struct PatientMonitor: View {
-    var body: some View {
-        NavigationView {
-        VStack() {
-            
-            Text("Hello, Patient Monitor!")
-            Image("PatientMonitoring")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            Text("")
-            Text("Monitor patient location, vital signs and even lost objects. Easily assign monitoring duties among team.  In case of emergency, maximize the number of eyes by sharing alerts with law enforcement, hospitals, taxis, media etc. ")
-        }
-    
-    }
-     .navigationBarTitle(Text("Patient Monitoring"))
-}
+                @State var showLandingPageAlert = true
+                var allPatientMonitorCandidates: [PatientMonitorRecord] = []
+        //        @ObservedObject var astationProximityDetector = StationProximityDetector()
+                
+                // let location: CLLocation
+                var body: some View {
+                    
+                    NavigationView {
+                        
+                        List(allPatientMonitorCandidates) { singlePatientMonitorCandidate in
+                        NavigationLink(destination: PatientMonitorDetail()) {
+                        Image(singlePatientMonitorCandidate.thumbnailNameService)
+                            .resizable()
+                            .cornerRadius(5.0)
+                            .frame(width: 150, height: 125)
+                            
+                        VStack(alignment: .leading) {
+                            Text("Patient: \(singlePatientMonitorCandidate.patientName)")
+                            .font(.subheadline)
+                            Text("What: \(singlePatientMonitorCandidate.requestedService)")
+                            .font(.subheadline)
+                            Text("Status: GREEN/RED")
+                            Text("By: \(singlePatientMonitorCandidate.name) - \(singlePatientMonitorCandidate.caregiverID)")
+                            .font(.subheadline)
+                            
+    //                        Text("Comment: " + "\(singlePatientMonitorCandidate.specialComment)")
+                            
+                        }
+                       }
+                    }
+                    .navigationBarTitle(Text("Being Monitored"))
+                       .alert(isPresented: $showLandingPageAlert) {
+                        Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Proactive Monitoring using real time data and artificial intelligence."), dismissButton: .default(Text("Ok")))
+                        }
+                    }
+                }
 }
 
 struct PatientMonitor_Previews: PreviewProvider {
     static var previews: some View {
-        PatientMonitor()
+        PatientMonitor(allPatientMonitorCandidates: patientMonitorTestData)
     }
 }

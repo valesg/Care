@@ -11,17 +11,19 @@ import SwiftUI
 struct OnCallStaffDetail: View {
     var body: some View {
         NavigationView {
+        
         VStack () {
             Image("CareNotification")
             .resizable()
             .aspectRatio(contentMode: .fit)
-          Text("Select OnCall caregivers and submit request. Caregivers receive notifications and may opt to accept or decline OnCall invite. Managers can track progress.")
+          Text("Submit request for selected caregiver. He/She receives notification and may opt to accept or decline OnCall invite. Managers can track progress. Delete option allows removal of selected caregiver from the OnCall group")
         }
         
     }
-        .navigationBarTitle(Text("OnCall Easy"))
+        .navigationBarTitle(Text("Group Member"))
 }
 }
+
 struct OnCallStaffDetail_Previews: PreviewProvider {
     static var previews: some View {
         OnCallStaffDetail()

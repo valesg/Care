@@ -38,17 +38,31 @@ struct OnCallReplacementStaff: View {
                     }
                    }
                 }
-                .navigationBarTitle(Text("OnCall Search Result"))
+                .navigationBarTitle(Text("My OnCall Group"))
+                .navigationBarItems(trailing:
+                    HStack {
+                                Button(action: { GotoManageGroup() })
+                                {
+                                    Image(systemName: "plus.circle")
+                                }
+                        
+                    })
+                        
+                        
                    .alert(isPresented: $showLandingPageAlert) {
                     Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Making it easy to reach OnCall staff when an extra hand is needed."), dismissButton: .default(Text("Ok")))
                     }
                 }
             }
-        
+}
+
+func GotoManageGroup() {
+    ManageGroup()
+}
 
 struct OnCallReplacementStaff_Previews: PreviewProvider {
     static var previews: some View {
         OnCallReplacementStaff(allOnCallCandidates: onCallStaffTestData)
     }
 }
-}
+

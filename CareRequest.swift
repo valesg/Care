@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CareRequest: View {
         @State var showLandingPageAlert = true
+        @State var isModal = false
+    
         var careRequests: [CareRequestRecord] = []
 //        @ObservedObject var astationProximityDetector = StationProximityDetector()
         
@@ -46,19 +48,25 @@ struct CareRequest: View {
                }
             }
             .navigationBarTitle(Text("My Care Requests"))
-            // .navigationBarItems(leading:
-            //    HStack {
-                
-            //        NavigationLink(destination: Following()) {
-            //            Text("Nearest @ " + "\(self.astationProximityDetector.distanceFromStation) km")
                     
-            //        }
-                    
-                    // Button("About") {
-                    //    print("About Tapped")
-                    // }
+            .navigationBarItems(trailing:
 
-            //    })
+            HStack {
+//                Button(action: {
+//                    AppSettings()
+////                   CareMakeAnnouncement(myText: "You have clicked on the plus sign. Very good.")
+//                })
+//                {
+//                    Image(systemName: "plus.circle")
+//                }
+
+                Button("New Request") {
+                    self.isModal = true
+                }.sheet(isPresented: $isModal, content: {
+                    AddCareRequest()
+                })
+            })
+                    
                .alert(isPresented: $showLandingPageAlert) {
                 Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Connecting patients and caregivers."), dismissButton: .default(Text("Ok")))
                 }

@@ -13,10 +13,10 @@ struct CareRequestDetail: View {
     var body: some View {
         NavigationView {
             VStack () {
-            Image("CareRequestBell")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            
+                Image("CareRequestBell")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        
         Text("Hello! View details on selected Care Request. Details may include patient ID, requestor ID, full address, special comments etc.")
     }
         .navigationBarTitle(Text("Care Request Details"))

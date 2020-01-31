@@ -29,6 +29,7 @@ struct MemberManagement: View {
             @State var lastName: String = ""
             @State var licenseId: String = ""
             @State var emailAddress: String = ""
+            @State var gender: String = ""
             
             var body: some View {
                 NavigationView {
@@ -41,12 +42,10 @@ struct MemberManagement: View {
                                                 }
                         }
                         Section {
-                            Text("First Name:")
-                            TextField("Jennifer", text: $firstName)
-                            Text("Last Name:")
-                            TextField("Mel", text: $lastName)
-                            Text("Email:")
-                            TextField("gvales@metcove.com", text: $emailAddress)
+                            TextField("First Name", text: $firstName)
+                            TextField("Last Name", text: $lastName)
+                            TextField("Email", text: $emailAddress)
+                            TextField("Gender", text: $gender)
                         }
                         
                         
@@ -98,7 +97,6 @@ struct MemberManagement: View {
                                 }
                             else if self.profileType[selectedProfile] == "Caregiver" {
                                 
-                                Text("Your Caregiver Info ( \(self.announceType[selectedAnnounceType]) )")
                                 Picker(selection: $selectedAnnounceType, label: Text("Caregiver Title")) {
                                     ForEach(0..<announceType.count) {
                                         Text(self.announceType[$0])
@@ -112,8 +110,7 @@ struct MemberManagement: View {
                                         Text(self.affectedTrainLine[$0])
                                     }
                                 }
-                                Text("License #")
-                                TextField("1234567", text: $licenseId)
+                                TextField("License number", text: $licenseId)
                                 }
                                  Button(action: {
                                      self.sayAnnouncement.toggle()
