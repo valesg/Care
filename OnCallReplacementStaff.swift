@@ -10,6 +10,7 @@ import SwiftUI
 
 struct OnCallReplacementStaff: View {
             @State var showLandingPageAlert = true
+            @State var isModal = false
             var allOnCallCandidates: [OnCallStaffRecord] = []
     //        @ObservedObject var astationProximityDetector = StationProximityDetector()
             
@@ -39,14 +40,23 @@ struct OnCallReplacementStaff: View {
                    }
                 }
                 .navigationBarTitle(Text("My OnCall Group"))
-                .navigationBarItems(trailing:
-                    HStack {
-                                Button(action: { GotoManageGroup() })
-                                {
-                                    Image(systemName: "plus.circle")
-                                }
-                        
-                    })
+                 .navigationBarItems(trailing:
+
+                            HStack {
+                //                Button(action: {
+                //                    AppSettings()
+                ////                   CareMakeAnnouncement(myText: "You have clicked on the plus sign. Very good.")
+                //                })
+                //                {
+                //                    Image(systemName: "plus.circle")
+                //                }
+
+                                Button("New group member") {
+                                    self.isModal = true
+                                }.sheet(isPresented: $isModal, content: {
+                                    AddMemberToGroup()
+                                })
+                            })
                         
                         
                    .alert(isPresented: $showLandingPageAlert) {
@@ -56,9 +66,6 @@ struct OnCallReplacementStaff: View {
             }
 }
 
-func GotoManageGroup() {
-    ManageGroup()
-}
 
 struct OnCallReplacementStaff_Previews: PreviewProvider {
     static var previews: some View {

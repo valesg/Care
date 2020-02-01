@@ -13,6 +13,7 @@ struct AddCareRequest: View {
         var announceType = ["Nurse", "PSW", "RNA"]
         var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
+        var requestRecipient = ["All Qualified", "Group", "Specific caregiver"]
         var profileType = ["Care", "Monitoring"]
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
@@ -20,6 +21,7 @@ struct AddCareRequest: View {
         @State private var selectedPassengerType = 0
         @State private var selectedListeningStation = 0
         @State private var selectedAffectedTrainLine = 0
+        @State private var selectedRequestRecipient = 0
         @State private var selectedProfile = 0
         @State var sayAnnouncement = false
         @State var proposedHourlyRate = 15
@@ -53,10 +55,15 @@ struct AddCareRequest: View {
                         }
                         
                         Stepper(value: $proposedHourlyRate, in: 15...150) {
-                         Text("Proposed Rate: \(self.proposedHourlyRate) per hour")
+                         Text("Proposed Rate: $\(self.proposedHourlyRate) per hour")
                         }
                         Stepper(value: $estimatedDuration, in: 1...24) {
                          Text("Est. Duration: \(self.estimatedDuration) hour(s)")
+                        }
+                        Picker(selection: $selectedRequestRecipient, label: Text("Send request to")) {
+                            ForEach(0..<requestRecipient.count) {
+                                Text(self.requestRecipient[$0])
+                            }
                         }
                         TextField("When", text: $when)
                         TextField("Patient ID", text: $patientID)

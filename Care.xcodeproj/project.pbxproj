@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9445ABB23E5B1F80006BA6B /* AddMemberToGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9445ABA23E5B1F80006BA6B /* AddMemberToGroup.swift */; };
 		E96C176023DDCC41004625D0 /* PatientMonitorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C175F23DDCC41004625D0 /* PatientMonitorData.swift */; };
 		E96C176223DDCF6E004625D0 /* PatientMonitorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C176123DDCF6E004625D0 /* PatientMonitorDetail.swift */; };
 		E96C176423DE2299004625D0 /* AddCareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C176323DE2299004625D0 /* AddCareRequest.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9445ABA23E5B1F80006BA6B /* AddMemberToGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberToGroup.swift; sourceTree = "<group>"; };
 		E96C175F23DDCC41004625D0 /* PatientMonitorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMonitorData.swift; sourceTree = "<group>"; };
 		E96C176123DDCF6E004625D0 /* PatientMonitorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMonitorDetail.swift; sourceTree = "<group>"; };
 		E96C176323DE2299004625D0 /* AddCareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCareRequest.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		E976B4FA23D7DD49004023F7 = {
 			isa = PBXGroup;
 			children = (
+				E9445ABA23E5B1F80006BA6B /* AddMemberToGroup.swift */,
 				E976B54823DCC4A1004023F7 /* OnCallStaffData.swift */,
 				E976B53623D7DE21004023F7 /* OnCallReplacementStaff.swift */,
 				E976B54A23DCF171004023F7 /* OnCallStaffDetail.swift */,
@@ -339,6 +342,7 @@
 				E976B54B23DCF171004023F7 /* OnCallStaffDetail.swift in Sources */,
 				E96C176823E26AC6004625D0 /* EditSwitchProfile.swift in Sources */,
 				E976B53D23D7DEB5004023F7 /* MemberManagement.swift in Sources */,
+				E9445ABB23E5B1F80006BA6B /* AddMemberToGroup.swift in Sources */,
 				E96C176423DE2299004625D0 /* AddCareRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

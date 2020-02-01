@@ -16,9 +16,9 @@ struct AppView: View {
         TabView(selection: $selected) {
             
             OnCallReplacementStaff(allOnCallCandidates: onCallStaffTestData).tabItem({
-                Image(systemName: "plus.circle")
+                Image(systemName: "person.3.fill")
                     .font(.title)
-                Text("OnCall Group")
+                Text("Group Mgmt")
             }).tag(1)
             
                 CareRequest(careRequests: testData).tabItem({
