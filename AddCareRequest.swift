@@ -11,7 +11,7 @@ import AVFoundation
 
 struct AddCareRequest: View {
         var announceType = ["Nurse", "PSW", "RNA"]
-        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
+        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific caregiver"]
         var profileType = ["Care", "Monitoring"]
