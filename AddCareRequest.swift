@@ -15,7 +15,7 @@ struct AddCareRequest: View {
         var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
-        var profileType = ["Care", "Monitoring"]
+        var profileType = ["Standard", "Refer A Friend"]
         var careGroup = ["OnCall", "Stars"]
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
@@ -45,19 +45,23 @@ struct AddCareRequest: View {
         var body: some View {
             NavigationView {
                 Form {
-//                    Section {
-//                        Picker(selection: $selectedProfile, label: Text("Request Type")) {
-//                        ForEach(0..<profileType.count) {
-//                        Text(self.profileType[$0])
-//                                                }
-//                                            }
-//                    }
+                    
                     Section {
+                        Picker(selection: $selectedProfile, label: Text("Request Type")) {
+                        ForEach(0..<profileType.count) {
+                        Text(self.profileType[$0])
+                                                }
+                                            }
+                    }
+                    
+                    Section {
+                        
                         Picker(selection: $selectedPassengerType, label: Text("Requested Service")) {
                             ForEach(0..<passengerType.count) {
                                 Text(self.passengerType[$0])
                             }
                         }
+                       
                         
                         Stepper(value: $proposedHourlyRate, in: 15...150) {
                          Text("Proposed Rate: $\(self.proposedHourlyRate) per hour")
@@ -176,7 +180,7 @@ struct AddCareRequest: View {
                                 }
                             
                         }
-                        else if self.profileType[selectedProfile] != "Care" {
+                        else if self.profileType[selectedProfile] == "Care" {
                              Button(action: {
                                  self.sayAnnouncement.toggle()
                                 CareMakeAnnouncement(myText: "You have submitted a care request for patient \(self.patientID) regarding \(self.passengerType[self.selectedPassengerType]) services. Your request will be forwarded to our care givers.  You will receive a response shortly.")
