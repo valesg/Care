@@ -10,6 +10,7 @@ import SwiftUI
 import AVFoundation
 
 struct AddCareRequest: View {
+        @Environment(\.presentationMode) var presentationMode
         var announceType = ["Nurse", "PSW", "RNA"]
         var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
@@ -185,6 +186,14 @@ struct AddCareRequest: View {
                         
                 }
             }.navigationBarTitle("New Request")
+                .navigationBarItems(trailing:
+                HStack() {
+                 Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                     }) {
+                       Text("Dismiss")
+                     }
+                })
 
         }
     }

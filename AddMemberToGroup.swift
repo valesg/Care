@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AddMemberToGroup: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var addedMemberID: String = ""
     
     var body: some View {
@@ -28,6 +29,14 @@ struct AddMemberToGroup: View {
 
 }
         .navigationBarTitle("Add Member")
+            .navigationBarItems(trailing:
+            HStack() {
+             Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                 }) {
+                   Text("Dismiss")
+                 }
+            })
 }
 }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 import AVFoundation
 
 struct MemberManagement: View {
+            @Environment(\.presentationMode) var presentationMode
             var announceType = ["Nurse", "PSW", "RNA"]
             var passengerType = ["with small children", "in First Class", "remaining"]
             var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
@@ -120,7 +121,7 @@ struct MemberManagement: View {
                                 }
                                  Button(action: {
                                      self.sayAnnouncement.toggle()
-                                     MakeAnnouncement(myText: "Congrats, you have been registered as a care giver with a license from \(self.affectedTrainLine[self.selectedAffectedTrainLine]).")
+                                     MakeAnnouncement(myText: "Congrats, you have signed up as a care giver with a license from \(self.affectedTrainLine[self.selectedAffectedTrainLine]).")
                                  })
                                     {
                                         Text("Become a CareDrum member")
@@ -130,7 +131,7 @@ struct MemberManagement: View {
                             else if self.profileType[selectedProfile] == "Patient" {
                                  Button(action: {
                                      self.sayAnnouncement.toggle()
-                                     MakeAnnouncement(myText: "Congrats, you have been registered as a \(self.profileType[self.selectedProfile]).")
+                                     MakeAnnouncement(myText: "Congrats, you have signed up as a \(self.profileType[self.selectedProfile]).")
                                                              })
                                         {
                                             Text("Become a CareDrum member")
@@ -156,8 +157,15 @@ struct MemberManagement: View {
                             }
                             
                     }
-                }.navigationBarTitle("Membership")
-
+                }.navigationBarTitle("Sign Up")
+                .navigationBarItems(trailing:
+                HStack() {
+                 Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                     }) {
+                       Text("Dismiss")
+                     }
+                })
             }
         }
         }

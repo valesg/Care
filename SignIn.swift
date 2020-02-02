@@ -15,6 +15,8 @@ struct SignIn: View {
     @State var isModal2 = false
     var body: some View {
         NavigationView {
+            Form {
+            Section {
             VStack() {
                 TextField("Username", text: $myUsername)
                 TextField("Password", text: $myPassword)
@@ -40,8 +42,12 @@ struct SignIn: View {
                 }.sheet(isPresented: $isModal2, content: {
                     EditSwitchProfile()
                 })
-                        
+                
+                    
                 })
+        }
+            
+            }
         }
 
     }
