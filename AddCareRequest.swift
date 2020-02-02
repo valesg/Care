@@ -14,8 +14,9 @@ struct AddCareRequest: View {
         var announceType = ["Nurse", "PSW", "RNA"]
         var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
-        var requestRecipient = ["All Qualified", "Group", "Specific caregiver"]
+        var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
         var profileType = ["Care", "Monitoring"]
+        var careGroup = ["OnCall", "Stars"]
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
         @State private var selectedAnnounceType = 0
@@ -24,12 +25,14 @@ struct AddCareRequest: View {
         @State private var selectedAffectedTrainLine = 0
         @State private var selectedRequestRecipient = 0
         @State private var selectedProfile = 0
+        @State private var selectedCareGroup = 0
         @State var sayAnnouncement = false
         @State var proposedHourlyRate = 15
         @State var trainLine: String = ""
         @State var lostItem: String = ""
         @State var firstName: String = ""
         @State var lastName: String = ""
+        @State var caregiverID: String = ""
         @State var patientID: String = ""
         @State var requestorID: String = ""
         @State var licenseId: String = ""
@@ -37,6 +40,7 @@ struct AddCareRequest: View {
         @State var patientAddress: String = ""
         @State private var when = Date()
         @State var estimatedDuration = 3
+        @State var groupName: String = ""
         
         var body: some View {
             NavigationView {
@@ -66,10 +70,22 @@ struct AddCareRequest: View {
                                 Text(self.requestRecipient[$0])
                             }
                         }
+                        if self.requestRecipient[selectedRequestRecipient] == "Group" {
+                            Picker(selection: $selectedCareGroup, label: Text("Choose group")) {
+                                ForEach(0..<careGroup.count) {
+                                    Text(self.careGroup[$0])
+                                }
+                            }
+ 
+//                             TextField("Choose group (e.g. OnCall)", text: $groupName)
+                        }
+                        if self.requestRecipient[selectedRequestRecipient] == "Specific Caregiver" {
+                            TextField("Member ID of Caregiver", text: $caregiverID)
+                        }
                         DatePicker("When", selection: $when, in: Date()...)
-                        TextField("Patient ID", text: $patientID)
-                        TextField("Requester ID", text: $requestorID)
-                        TextField("Patient Address", text: $patientAddress)
+                        TextField("Member ID of Patient", text: $patientID)
+                        TextField("Address", text: $patientAddress)
+
 
 
                         Button(action: {
