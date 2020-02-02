@@ -16,7 +16,7 @@ struct OnCallStaffDetail: View {
             Image("CareNotification")
             .resizable()
             .aspectRatio(contentMode: .fit)
-          Text("Submit request for selected caregiver. He/She receives notification and may opt to accept or decline OnCall invite. Managers can track progress. Delete option allows removal of selected caregiver from the OnCall group")
+          Text("View details on a member of the group. Delete option allows removal of the selected caregiver from the group.")
         }
         
     }

@@ -9,14 +9,23 @@
 import SwiftUI
 
 struct SignIn: View {
+    @State var myUsername: String = ""
+    @State var myPassword: String = ""
     @State var isModal = false
     @State var isModal2 = false
     var body: some View {
         NavigationView {
             VStack() {
-            Text("Username: ")
-                Text("Password: ")
-        
+                TextField("Username", text: $myUsername)
+                TextField("Password", text: $myPassword)
+                Button(action: {
+                    CareMakeAnnouncement(myText: "Congrats, you have logged in with username \(self.myUsername).")
+                    })
+                   {
+                       Text("Login")
+                   }
+                    
+            }
                 .navigationBarTitle(Text("Sign In"))
                 .navigationBarItems(trailing:
                 HStack() {
@@ -26,18 +35,18 @@ struct SignIn: View {
                     MemberManagement()
                 })
         
-                    Button("Logged-In") {
-                        self.isModal2 = true
-                    }.sheet(isPresented: $isModal2, content: {
-                        EditSwitchProfile()
-                    })
+                Button("Logged-In") {
+                    self.isModal2 = true
+                }.sheet(isPresented: $isModal2, content: {
+                    EditSwitchProfile()
+                })
                         
                 })
         }
 
     }
 }
-}
+
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
         SignIn()

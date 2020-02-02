@@ -28,7 +28,7 @@ struct OnCallReplacementStaff: View {
                         
                     VStack(alignment: .leading) {
                         Text(singleOnCallCandidate.name)
-                        Text("Employee Id: \(singleOnCallCandidate.caregiverID)")
+                        Text("Member Id: \(singleOnCallCandidate.caregiverID)")
                         .font(.subheadline)
                         Text("Title: \(singleOnCallCandidate.professionalTitle)")
                         .font(.subheadline)
@@ -60,7 +60,7 @@ struct OnCallReplacementStaff: View {
                         
                         
                    .alert(isPresented: $showLandingPageAlert) {
-                    Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Making it easy to reach OnCall staff when an extra hand is needed."), dismissButton: .default(Text("Ok")))
+                    Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Create and add members to your own groups.  Then, you may send them your care requests (e.g. OnCall group)."), dismissButton: .default(Text("Ok")))
                     }
                 }
             }

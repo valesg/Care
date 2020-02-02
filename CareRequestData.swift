@@ -34,7 +34,7 @@ let testData = [
     CareRequestRecord(requestorID: 1, patientID: 101, requestedServiceCode: 1, requestedService: "Blood Work", name: "Next: Cedric Lochard", when: "Today @ 13:00", address: "Nearby...", patientLatitude: 40, patientLongitude: -75, hasVideo: true, mapLatitude:40, mapLongitude: -75),
     CareRequestRecord(requestorID: 2, patientID: 105, requestedServiceCode: 2, requestedService: "Lab Test", name: "Next: Graham Doe", when: "Tomorrow @ 9:00", address: "Nearby...", patientLatitude: 40, patientLongitude: -75, hasVideo: true, mapLatitude:40, mapLongitude: -75),
     CareRequestRecord(requestorID: 3, patientID: 200, requestedServiceCode: 3, requestedService: "Nutrition", name: "Done: Melissa Doe", when: "Jan 20 @ 13:00", address: "Nearby...", patientLatitude: 40, patientLongitude: -75, hasVideo: true, mapLatitude:37.2, mapLongitude: -75),
-    CareRequestRecord(requestorID: 4, patientID: 198, requestedServiceCode: 4, requestedService: "Pharmaceutical", name: "Done: Jennifer Doe", when: "Jan 19 @ 10:00", address: "Nearby...", patientLatitude: 40, patientLongitude: -75, hasVideo: true, mapLatitude:37.2, mapLongitude: -75),
+    CareRequestRecord(requestorID: 4, patientID: 198, requestedServiceCode: 4, requestedService: "Pharma", name: "Done: Jennifer Doe", when: "Jan 19 @ 10:00", address: "Nearby...", patientLatitude: 40, patientLongitude: -75, hasVideo: true, mapLatitude:37.2, mapLongitude: -75),
     CareRequestRecord(requestorID: 5, patientID: 230, requestedServiceCode: 5, requestedService: "Vaccination", name: "Done: Sam Doe", when: "Jan 18 @ 9:30", address: "Nearby", patientLatitude: 37, patientLongitude: 23, hasVideo: false, mapLatitude:37.2, mapLongitude: -75),
 
 ]

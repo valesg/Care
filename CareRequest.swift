@@ -31,8 +31,7 @@ struct CareRequest: View {
                     Text(careRequest.name)
 //                    Text("Patient Id: \(careRequest.patientID)")
                     .font(.subheadline)
-//                    Text("Requestor Id: \(careRequest.requestorID)")
-                    .font(.subheadline)
+                    
                     Text("Service: \(careRequest.requestedService)")
                     .font(.subheadline)
                     Text("When: \(careRequest.when)")
@@ -40,6 +39,9 @@ struct CareRequest: View {
                     Text("Where: \(careRequest.requestorID) Riverside")
                     .font(.subheadline)
                     Text("Ottawa, Ontario")
+                    .font(.subheadline)
+                    Text("Requestor Id: \(careRequest.requestorID)")
+                    .font(.subheadline)
 //                    Text("Comment: " + "\(careRequest.specialComment)")
 //                    Text("Loc: " + "\(careRequest.stationlatitude)" + ", \(careRequest.stationlongitude) " + "\(self.astationProximityDetector.shortestDistance)")
                     .font(.subheadline)
@@ -68,7 +70,7 @@ struct CareRequest: View {
             })
                     
                .alert(isPresented: $showLandingPageAlert) {
-                Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Connecting patients and caregivers."), dismissButton: .default(Text("Ok")))
+                Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Connecting patients and caregivers. View care requests assigned to you or that you requested."), dismissButton: .default(Text("Ok")))
                 }
             }
         }

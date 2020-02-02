@@ -14,6 +14,7 @@ struct MemberManagement: View {
             var passengerType = ["with small children", "in First Class", "remaining"]
             var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
             var profileType = ["Patient", "Caregiver", "Care Manager"]
+            var gender = ["Female", "Male"]
             var listeningStation = ["Text"]
             @State var adHocMsg: String = "This is an Ad-hoc message"
             @State private var selectedAnnounceType = 0
@@ -21,6 +22,7 @@ struct MemberManagement: View {
             @State private var selectedListeningStation = 0
             @State private var selectedAffectedTrainLine = 0
             @State private var selectedProfile = 0
+            @State private var selectedGender = 0
             @State var sayAnnouncement = false
             @State var delay = 10
             @State var trainLine: String = ""
@@ -29,7 +31,7 @@ struct MemberManagement: View {
             @State var lastName: String = ""
             @State var licenseId: String = ""
             @State var emailAddress: String = ""
-            @State var gender: String = ""
+
             
             var body: some View {
                 NavigationView {
@@ -45,7 +47,11 @@ struct MemberManagement: View {
                             TextField("First Name", text: $firstName)
                             TextField("Last Name", text: $lastName)
                             TextField("Email", text: $emailAddress)
-                            TextField("Gender", text: $gender)
+                            Picker(selection: $selectedGender, label: Text("Gender")) {
+                             ForEach(0..<gender.count) {
+                             Text(self.gender[$0])
+                                                     }
+                                                 }
                         }
                         
                         

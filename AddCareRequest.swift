@@ -34,8 +34,8 @@ struct AddCareRequest: View {
         @State var licenseId: String = ""
         @State var emailAddress: String = ""
         @State var patientAddress: String = ""
-        @State var when: String = ""
-        @State var estimatedDuration = 1
+        @State private var when = Date()
+        @State var estimatedDuration = 3
         
         var body: some View {
             NavigationView {
@@ -65,7 +65,7 @@ struct AddCareRequest: View {
                                 Text(self.requestRecipient[$0])
                             }
                         }
-                        TextField("When", text: $when)
+                        DatePicker("When", selection: $when, in: Date()...)
                         TextField("Patient ID", text: $patientID)
                         TextField("Requester ID", text: $requestorID)
                         TextField("Patient Address", text: $patientAddress)

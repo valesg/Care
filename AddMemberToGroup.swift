@@ -18,7 +18,7 @@ struct AddMemberToGroup: View {
                     Text("OnCall Group - Add member")
                     TextField("Member ID", text: $addedMemberID)
                     Button(action: {
-                        CareMakeAnnouncement(myText: "Congrats, you have added care giver with member I-D  \(self.addedMemberID) to the OnCall group.")
+                        CareMakeAnnouncement(myText: "Congrats, you have added care giver with member I-D  \(self.addedMemberID) to the OnCall Group.")
                     })
                        {
                            Text("Add Member to Group")
