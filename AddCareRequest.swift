@@ -12,10 +12,10 @@ import AVFoundation
 struct AddCareRequest: View {
         @Environment(\.presentationMode) var presentationMode
         var announceType = ["Nurse", "PSW", "RNA"]
-        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination", "Other"]
+        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Other - Multiple", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
-        var profileType = ["Standard", "Refer A Friend"]
+        var profileType = ["Single", "Multiple"]
         var careGroup = ["OnCall", "Stars"]
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
@@ -47,7 +47,7 @@ struct AddCareRequest: View {
                 Form {
                     
                     Section {
-                        Picker(selection: $selectedProfile, label: Text("Request Type")) {
+                        Picker(selection: $selectedProfile, label: Text("Number of Patients")) {
                         ForEach(0..<profileType.count) {
                         Text(self.profileType[$0])
                                                 }
@@ -87,7 +87,10 @@ struct AddCareRequest: View {
                             TextField("Member ID of Caregiver", text: $caregiverID)
                         }
                         DatePicker("When", selection: $when, in: Date()...)
-                        TextField("Member ID of Patient", text: $patientID)
+                        if self.profileType[selectedProfile] == "Single" {
+                            TextField("Member ID of Patient", text: $patientID)
+                        }
+                        
                         TextField("Address", text: $patientAddress)
 
 
