@@ -18,7 +18,7 @@ struct SignIn: View {
             Form {
             Section {
             VStack() {
-                TextField("Username", text: $myUsername)
+                TextField("Email Address", text: $myUsername)
                 TextField("Password", text: $myPassword)
                 Button(action: {
                     CareMakeAnnouncement(myText: "Congrats, you have logged in with username \(self.myUsername).")

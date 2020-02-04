@@ -12,11 +12,13 @@ import AVFoundation
 struct AddCareRequest: View {
         @Environment(\.presentationMode) var presentationMode
         var announceType = ["Nurse", "PSW", "RNA"]
-        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "Monitoring", "Nutrition", "Other - Multiple", "Pharmaceutical", "Physical Therapy", "Shift - Day", "Shift - Evening", "Shift - Night", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
+        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "GeoMonitoring", "Nutrition", "Other - Multiple", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
         var profileType = ["Single", "Multiple"]
         var careGroup = ["OnCall", "Stars"]
+        var rateDuration = ["Pre-negotiated", "Custom"]
+    
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
         @State private var selectedAnnounceType = 0
@@ -26,6 +28,7 @@ struct AddCareRequest: View {
         @State private var selectedRequestRecipient = 0
         @State private var selectedProfile = 0
         @State private var selectedCareGroup = 0
+        @State private var selectedRateDuration = 0
         @State var sayAnnouncement = false
         @State var proposedHourlyRate = 15
         @State var trainLine: String = ""
@@ -39,6 +42,7 @@ struct AddCareRequest: View {
         @State var emailAddress: String = ""
         @State var patientAddress: String = ""
         @State private var when = Date()
+    
         @State var estimatedDuration = 3
         @State var groupName: String = ""
         
@@ -52,23 +56,32 @@ struct AddCareRequest: View {
                         Text(self.profileType[$0])
                                                 }
                                             }
+                        if self.profileType[selectedProfile] == "Single" {
+                            TextField("Patient's MemberID", text: $patientID)
+                        }
                     }
                     
                     Section {
                         
-                        Picker(selection: $selectedPassengerType, label: Text("Requested Service")) {
+                        Picker(selection: $selectedPassengerType, label: Text("Requested Service(s)")) {
                             ForEach(0..<passengerType.count) {
                                 Text(self.passengerType[$0])
                             }
                         }
                        
+                        Picker(selection: $selectedRateDuration, label: Text("Rate")) {
+                            ForEach(0..<rateDuration.count) {
+                                Text(self.rateDuration[$0])
+                            }
+                        }
                         
+                        if self.rateDuration[selectedRateDuration] == "Custom" {
                         Stepper(value: $proposedHourlyRate, in: 15...150) {
                          Text("Proposed Rate: $\(self.proposedHourlyRate) per hour")
                         }
-                        Stepper(value: $estimatedDuration, in: 1...24) {
-                         Text("Est. Duration: \(self.estimatedDuration) hour(s)")
+
                         }
+                        
                         Picker(selection: $selectedRequestRecipient, label: Text("Send request to")) {
                             ForEach(0..<requestRecipient.count) {
                                 Text(self.requestRecipient[$0])
@@ -84,13 +97,12 @@ struct AddCareRequest: View {
 //                             TextField("Choose group (e.g. OnCall)", text: $groupName)
                         }
                         if self.requestRecipient[selectedRequestRecipient] == "Specific Caregiver" {
-                            TextField("Member ID of Caregiver", text: $caregiverID)
+                            TextField("Caregiver's MemberID", text: $caregiverID)
                         }
                         DatePicker("When", selection: $when, in: Date()...)
-                        if self.profileType[selectedProfile] == "Single" {
-                            TextField("Member ID of Patient", text: $patientID)
+                        Stepper(value: $estimatedDuration, in: 1...80) {
+                         Text("Est. Duration: \(self.estimatedDuration) hour(s)")
                         }
-                        
                         TextField("Address", text: $patientAddress)
 
 
@@ -102,9 +114,6 @@ struct AddCareRequest: View {
                             {
                                 Text("Submit Care Request")
                             }
-                        
-                            
-                            
                         
                     }
                     

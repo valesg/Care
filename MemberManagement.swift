@@ -30,6 +30,7 @@ struct MemberManagement: View {
             @State var lostItem: String = ""
             @State var firstName: String = ""
             @State var lastName: String = ""
+            @State var password: String = ""
             @State var licenseId: String = ""
             @State var emailAddress: String = ""
 
@@ -48,6 +49,7 @@ struct MemberManagement: View {
                             TextField("First Name", text: $firstName)
                             TextField("Last Name", text: $lastName)
                             TextField("Email", text: $emailAddress)
+                            TextField("Choose Password", text:$password)
                             Picker(selection: $selectedGender, label: Text("Gender")) {
                              ForEach(0..<gender.count) {
                              Text(self.gender[$0])
