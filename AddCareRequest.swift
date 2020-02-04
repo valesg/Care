@@ -12,7 +12,7 @@ import AVFoundation
 struct AddCareRequest: View {
         @Environment(\.presentationMode) var presentationMode
         var announceType = ["Nurse", "PSW", "RNA"]
-        var passengerType = ["Blood Work", "Companionship", "Dressing", "Homemaker", "Lab Test", "GeoMonitoring", "Nutrition", "Other - Multiple", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
+        var passengerType = ["As Needed", "Blood Work", "Companionship", "Dressing", "Homemaker", "GeoMonitoring", "Lab Test", "Nutrition", "Other", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
         var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
         var profileType = ["Single", "Multiple"]
@@ -63,7 +63,7 @@ struct AddCareRequest: View {
                     
                     Section {
                         
-                        Picker(selection: $selectedPassengerType, label: Text("Requested Service(s)")) {
+                        Picker(selection: $selectedPassengerType, label: Text("Service(s)")) {
                             ForEach(0..<passengerType.count) {
                                 Text(self.passengerType[$0])
                             }
