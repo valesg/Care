@@ -13,7 +13,6 @@ struct CareRequest: View {
         @State var isModal = false
     
         var careRequests: [CareRequestRecord] = []
-//        @ObservedObject var astationProximityDetector = StationProximityDetector()
         
         // let location: CLLocation
         var body: some View {
@@ -29,7 +28,6 @@ struct CareRequest: View {
                     
                 VStack(alignment: .leading) {
                     Text(careRequest.name)
-//                    Text("Patient Id: \(careRequest.patientID)")
                     .font(.subheadline)
                     
                     Text("Service: \(careRequest.requestedService)")
@@ -42,9 +40,6 @@ struct CareRequest: View {
                     .font(.subheadline)
                     Text("Requestor Id: \(careRequest.requestorID)")
                     .font(.subheadline)
-//                    Text("Comment: " + "\(careRequest.specialComment)")
-//                    Text("Loc: " + "\(careRequest.stationlatitude)" + ", \(careRequest.stationlongitude) " + "\(self.astationProximityDetector.shortestDistance)")
-                    .font(.subheadline)
                     
                 }
                }
@@ -54,13 +49,6 @@ struct CareRequest: View {
             .navigationBarItems(trailing:
 
             HStack {
-//                Button(action: {
-//                    AppSettings()
-////                   CareMakeAnnouncement(myText: "You have clicked on the plus sign. Very good.")
-//                })
-//                {
-//                    Image(systemName: "plus.circle")
-//                }
 
                 Button("New Request") {
                     self.isModal = true

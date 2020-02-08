@@ -11,20 +11,20 @@ import AVFoundation
 
 struct AddCareRequest: View {
         @Environment(\.presentationMode) var presentationMode
-        var announceType = ["Nurse", "PSW", "RNA"]
-        var passengerType = ["As Needed", "Blood Work", "Companionship", "Dressing", "Homemaker", "GeoMonitoring", "Lab Test", "Nutrition", "Other", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
-        var affectedTrainLine = ["Ontario", "Quebec", "Alberta"]
+        var jobTitle = ["Nurse", "PSW", "RNA"]
+        var careService = ["As Needed", "Blood Work", "Companionship", "Dressing", "Homemaker", "GeoMonitoring", "Lab Test", "Nutrition", "Other", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
+        var licenceIssuer = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
-        var profileType = ["Single", "Multiple"]
+        var profileType = ["Multiple", "Single"]
         var careGroup = ["OnCall", "Stars"]
         var rateDuration = ["Pre-negotiated", "Custom"]
     
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
-        @State private var selectedAnnounceType = 0
-        @State private var selectedPassengerType = 0
+        @State private var selectedJobTitle = 0
+        @State private var selectedCareService = 0
         @State private var selectedListeningStation = 0
-        @State private var selectedAffectedTrainLine = 0
+        @State private var selectedLicenceIssuer = 0
         @State private var selectedRequestRecipient = 0
         @State private var selectedProfile = 0
         @State private var selectedCareGroup = 0
@@ -63,9 +63,9 @@ struct AddCareRequest: View {
                     
                     Section {
                         
-                        Picker(selection: $selectedPassengerType, label: Text("Service(s)")) {
-                            ForEach(0..<passengerType.count) {
-                                Text(self.passengerType[$0])
+                        Picker(selection: $selectedCareService, label: Text("Service(s)")) {
+                            ForEach(0..<careService.count) {
+                                Text(self.careService[$0])
                             }
                         }
                        
@@ -109,7 +109,7 @@ struct AddCareRequest: View {
 
                         Button(action: {
                          self.sayAnnouncement.toggle()
-                        CareMakeAnnouncement(myText: "You have submitted a care request for patient \(self.patientID) regarding \(self.passengerType[self.selectedPassengerType]) services. Your request will be forwarded to our care givers.  You will receive a response shortly.")
+                        CareMakeAnnouncement(myText: "You have submitted a care request for patient \(self.patientID) regarding \(self.careService[self.selectedCareService]) services. Your request will be forwarded to our care givers.  You will receive a response shortly.")
                                                  })
                             {
                                 Text("Submit Care Request")
@@ -120,7 +120,7 @@ struct AddCareRequest: View {
                     
                     Section {
                         
-                        if self.announceType[selectedAnnounceType] == "Ad-hoc" {
+                        if self.jobTitle[selectedJobTitle] == "Ad-hoc" {
                             Text("What do you want to say?")
                             TextField("Enter your announcement", text: $trainLine)
                             Button(action: {
@@ -128,56 +128,56 @@ struct AddCareRequest: View {
                                 MakeAnnouncement(myText: "Attention, \(self.trainLine)")
                             })
                                {
-                                   Text("Make \(self.announceType[selectedAnnounceType]) Announcement")
+                                   Text("Make \(self.jobTitle[selectedJobTitle]) Announcement")
                                }
                     
                         }
-                        else if self.announceType[selectedAnnounceType] == "Boarding" {
+                        else if self.jobTitle[selectedJobTitle] == "Boarding" {
                                 // Text("What Train?")
                                 // TextField("Train Line", text: $trainLine)
-                                Picker(selection: $selectedAffectedTrainLine, label: Text("Train Line")) {
-                                ForEach(0..<affectedTrainLine.count) {
-                                    Text(self.affectedTrainLine[$0])
+                                Picker(selection: $selectedLicenceIssuer, label: Text("Train Line")) {
+                                ForEach(0..<licenceIssuer.count) {
+                                    Text(self.licenceIssuer[$0])
                                     }
                                 }
-                                Picker(selection: $selectedPassengerType, label: Text("Passenger Type")) {
-                                    ForEach(0..<passengerType.count) {
-                                        Text(self.passengerType[$0])
+                                Picker(selection: $selectedCareService, label: Text("Passenger Type")) {
+                                    ForEach(0..<careService.count) {
+                                        Text(self.careService[$0])
                                     }
                                 }
-                            Text("Msg: Attention, passengers  \(self.passengerType[selectedPassengerType]), please board now")
+                            Text("Msg: Attention, passengers  \(self.careService[selectedCareService]), please board now")
                                  Button(action: {
                                      self.sayAnnouncement.toggle()
-                                    MakeAnnouncement(myText: "Attention, passengers  \(self.passengerType[self.selectedPassengerType]), please board now")
+                                    MakeAnnouncement(myText: "Attention, passengers  \(self.careService[self.selectedCareService]), please board now")
                                  })
                                     {
-                                        Text("Make \(self.announceType[selectedAnnounceType]) Announcement")
+                                        Text("Make \(self.jobTitle[selectedJobTitle]) Announcement")
                                     }
                             }
-                        else if self.announceType[selectedAnnounceType] == "Departure" {
+                        else if self.jobTitle[selectedJobTitle] == "Departure" {
                                 Text("What Trip?")
                                 Text("Departure Time?")
                                  Button(action: {
                                      self.sayAnnouncement.toggle()
                                  })
                                     {
-                                        Text("Make \(self.announceType[selectedAnnounceType]) Announcement")
+                                        Text("Make \(self.jobTitle[selectedJobTitle]) Announcement")
                                     }
                             }
                         else if self.profileType[selectedProfile] == "Caregiver" {
                             
-                            Text("Your Caregiver Info ( \(self.announceType[selectedAnnounceType]) )")
-                            Picker(selection: $selectedAnnounceType, label: Text("Caregiver Title")) {
-                                ForEach(0..<announceType.count) {
-                                    Text(self.announceType[$0])
+                            Text("Your Caregiver Info ( \(self.jobTitle[selectedJobTitle]) )")
+                            Picker(selection: $selectedJobTitle, label: Text("Caregiver Title")) {
+                                ForEach(0..<jobTitle.count) {
+                                    Text(self.jobTitle[$0])
                                 }
                             }
                             
-                            if self.announceType[selectedAnnounceType] == "Nurse" {
+                            if self.jobTitle[selectedJobTitle] == "Nurse" {
                                 
-                            Picker(selection: $selectedAffectedTrainLine, label: Text("Licenced in")) {
-                                ForEach(0..<affectedTrainLine.count) {
-                                    Text(self.affectedTrainLine[$0])
+                            Picker(selection: $selectedLicenceIssuer, label: Text("Licenced in")) {
+                                ForEach(0..<licenceIssuer.count) {
+                                    Text(self.licenceIssuer[$0])
                                 }
                             }
                             Text("License #")
@@ -185,7 +185,7 @@ struct AddCareRequest: View {
                             }
                              Button(action: {
                                  self.sayAnnouncement.toggle()
-                                 CareMakeAnnouncement(myText: "Congrats, you have been registered as a care giver with a license from \(self.affectedTrainLine[self.selectedAffectedTrainLine]).")
+                                 CareMakeAnnouncement(myText: "Congrats, you have been registered as a care giver with a license from \(self.licenceIssuer[self.selectedLicenceIssuer]).")
                              })
                                 {
                                     Text("Submit Care Request")
@@ -195,14 +195,14 @@ struct AddCareRequest: View {
                         else if self.profileType[selectedProfile] == "Care" {
                              Button(action: {
                                  self.sayAnnouncement.toggle()
-                                CareMakeAnnouncement(myText: "You have submitted a care request for patient \(self.patientID) regarding \(self.passengerType[self.selectedPassengerType]) services. Your request will be forwarded to our care givers.  You will receive a response shortly.")
+                                CareMakeAnnouncement(myText: "You have submitted a care request for patient \(self.patientID) regarding \(self.careService[self.selectedCareService]) services. Your request will be forwarded to our care givers.  You will receive a response shortly.")
                                                          })
                                     {
                                         Text("Submit Care Request")
                                     }
                                                         
                             }
-                        else if self.announceType[selectedAnnounceType] == "Lost & Found" {
+                        else if self.jobTitle[selectedJobTitle] == "Lost & Found" {
                                 Text("Found Item(s):")
                                 TextField("E.g. Purse, Gloves etc.", text: $lostItem)
                             Text("Msg: \(self.lostItem) have been found. If you are the owner of the item, please go to the information desk")
@@ -212,7 +212,7 @@ struct AddCareRequest: View {
                                     CareMakeAnnouncement(myText: "\(self.lostItem) have been found. If you are the owner of the item, please go to the information desk")
                                  })
                                     {
-                                        Text("Make \(self.announceType[selectedAnnounceType]) Announcement")
+                                        Text("Make \(self.jobTitle[selectedJobTitle]) Announcement")
                                     }
                             }
                         
