@@ -12,9 +12,7 @@ struct OnCallReplacementStaff: View {
             @State var showLandingPageAlert = true
             @State var isModal = false
             var allOnCallCandidates: [OnCallStaffRecord] = []
-    //        @ObservedObject var astationProximityDetector = StationProximityDetector()
             
-            // let location: CLLocation
             var body: some View {
                 
                 NavigationView {
@@ -34,7 +32,6 @@ struct OnCallReplacementStaff: View {
                         .font(.subheadline)
                         Text("Speciality: \(singleOnCallCandidate.requestedService)")
                         .font(.subheadline)
-//                        Text("Comment: " + "\(singleOnCallCandidate.specialComment)")
                         
                     }
                    }
@@ -43,13 +40,6 @@ struct OnCallReplacementStaff: View {
                  .navigationBarItems(trailing:
 
                             HStack {
-                //                Button(action: {
-                //                    AppSettings()
-                ////                   CareMakeAnnouncement(myText: "You have clicked on the plus sign. Very good.")
-                //                })
-                //                {
-                //                    Image(systemName: "plus.circle")
-                //                }
 
                                 Button("New group member") {
                                     self.isModal = true

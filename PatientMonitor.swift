@@ -11,9 +11,7 @@ import SwiftUI
 struct PatientMonitor: View {
                 @State var showLandingPageAlert = true
                 var allPatientMonitorCandidates: [PatientMonitorRecord] = []
-        //        @ObservedObject var astationProximityDetector = StationProximityDetector()
-                
-                // let location: CLLocation
+
                 var body: some View {
                     
                     NavigationView {
@@ -34,7 +32,6 @@ struct PatientMonitor: View {
                             Text("By: \(singlePatientMonitorCandidate.name) - \(singlePatientMonitorCandidate.caregiverID)")
                             .font(.subheadline)
                             
-    //                        Text("Comment: " + "\(singlePatientMonitorCandidate.specialComment)")
                             
                         }
                        }

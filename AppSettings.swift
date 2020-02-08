@@ -31,9 +31,6 @@ struct AppSettings: View {
                     Toggle(isOn: $haveCar) {
                         Text("Have a car")
                     }
-//                    Toggle(isOn: $myOrg) {
-//                        Text("Only notify staff of care manager")
-//                    }
                     Text(" ")
                     if haveCar && onDuty {
                         Text("Fantastic. You have a car and are on duty. Thank your for your participation in CareDrum.")
