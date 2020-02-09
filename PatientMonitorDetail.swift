@@ -9,9 +9,26 @@
 import SwiftUI
 
 struct PatientMonitorDetail: View {
+    @State var bgColor = Color.blue
+    @State var cr:CGFloat = 12
+    
     var body: some View {
                 NavigationView {
                 VStack() {
+                    Button (action: {
+                        withAnimation {
+                        self.bgColor = self.bgColor == Color.blue ? Color.red : Color.blue
+                        self.cr = self.cr == 12 ? 100 : 12
+                        }
+                        
+                    })
+                    {
+                        Text("Patient Status")
+                        .foregroundColor(.white)
+                        .frame(width: 200, height:200, alignment: .center)
+                        .background(bgColor)
+                        .cornerRadius(cr)
+                    }
                     Text("Monitoring Dashboard")
                     Image("PatientMonitoring")
                     .resizable()
