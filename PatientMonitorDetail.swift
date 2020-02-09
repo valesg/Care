@@ -15,6 +15,8 @@ struct PatientMonitorDetail: View {
     var body: some View {
                 NavigationView {
                 VStack() {
+                    Text("Monitoring Dashboard")
+                    Text("")
                     Button (action: {
                         withAnimation {
                         self.bgColor = self.bgColor == Color.blue ? Color.red : Color.blue
@@ -25,15 +27,15 @@ struct PatientMonitorDetail: View {
                     {
                         Text("Patient Status")
                         .foregroundColor(.white)
-                        .frame(width: 200, height:200, alignment: .center)
+                        .frame(width: 150, height:150, alignment: .center)
                         .background(bgColor)
                         .cornerRadius(cr)
                     }
-                    Text("Monitoring Dashboard")
+
                     Image("PatientMonitoring")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    Text("")
+//                    Text("")
                     Text("Get detailed info on monitored items such as patient location, vital signs or lost objects. Easily assign monitoring duties among care team.  In case of emergency, maximize the number of eyes on patients by sharing alerts with law enforcement, hospitals, taxis, media etc. ")
                 }
             
