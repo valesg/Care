@@ -16,7 +16,6 @@ struct PatientMonitorDetail: View {
                 NavigationView {
                 VStack() {
                     Text("Monitoring Dashboard")
-                    Text("")
                     Button (action: {
                         withAnimation {
                         self.bgColor = self.bgColor == Color.blue ? Color.red : Color.blue
@@ -27,7 +26,7 @@ struct PatientMonitorDetail: View {
                     {
                         Text("Patient Status")
                         .foregroundColor(.white)
-                        .frame(width: 150, height:150, alignment: .center)
+                        .frame(width: 75, height:75, alignment: .center)
                         .background(bgColor)
                         .cornerRadius(cr)
                     }
@@ -42,7 +41,7 @@ struct PatientMonitorDetail: View {
             }
              .navigationBarTitle(Text("Patient Monitoring"))
         }
-        }
+    }
 
 struct PatientMonitorDetail_Previews: PreviewProvider {
     static var previews: some View {
