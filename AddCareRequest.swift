@@ -12,7 +12,7 @@ import AVFoundation
 struct AddCareRequest: View {
         @Environment(\.presentationMode) var presentationMode
         var jobTitle = ["Nurse", "PSW", "RNA"]
-        var careService = ["As Needed", "Blood Work", "Companionship", "Dressing", "Homemaker", "GeoMonitoring", "Lab Test", "Nutrition", "Other", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
+        var careService = ["As Needed", "Blood Work", "Companionship", "Corona Virus", "Dressing", "Homemaker", "GeoMonitoring", "Lab Test", "Nutrition", "Other", "Pharmaceutical", "Physical Therapy", "Speech Therapy", "Toiletting", "Transportation", "Vaccination"]
         var licenceIssuer = ["Ontario", "Quebec", "Alberta"]
         var requestRecipient = ["All Qualified", "Group", "Specific Caregiver"]
         var profileType = ["Multiple", "Single"]
@@ -22,12 +22,12 @@ struct AddCareRequest: View {
         var listeningStation = ["Text"]
         @State var adHocMsg: String = "This is an Ad-hoc message"
         @State private var selectedJobTitle = 0
-        @State private var selectedCareService = 0
+        @State private var selectedCareService = 3
         @State private var selectedLicenceIssuer = 0
         @State private var selectedRequestRecipient = 0
-        @State private var selectedProfile = 0
+        @State private var selectedProfile = 1
         @State private var selectedCareGroup = 0
-        @State private var selectedRateType = 0
+        @State private var selectedRateType = 1
         @State var sayAnnouncement = false
         @State var proposedHourlyRate = 15
         @State var firstName: String = ""
@@ -47,11 +47,11 @@ struct AddCareRequest: View {
                 Form {
                     
                     Section {
-                        Picker(selection: $selectedProfile, label: Text("Number of Patients")) {
-                        ForEach(0..<profileType.count) {
-                        Text(self.profileType[$0])
-                                                }
-                                            }
+//                        Picker(selection: $selectedProfile, label: Text("Number of Patients")) {
+//                        ForEach(0..<profileType.count) {
+//                        Text(self.profileType[$0])
+//                                                }
+//                                            }
                         if self.profileType[selectedProfile] == "Single" {
                             TextField("Patient's MemberID", text: $patientID)
                         }
@@ -99,8 +99,7 @@ struct AddCareRequest: View {
                          Text("Est. Duration: \(self.estimatedDuration) hour(s)")
                         }
                         TextField("Address", text: $patientAddress)
-
-
+                        
 
                         Button(action: {
                          self.sayAnnouncement.toggle()

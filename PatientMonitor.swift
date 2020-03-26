@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PatientMonitor: View {
                 @State var showLandingPageAlert = true
+                @State var isModal = false
                 var allPatientMonitorCandidates: [PatientMonitorRecord] = []
 
                 var body: some View {
@@ -37,6 +38,18 @@ struct PatientMonitor: View {
                        }
                     }
                     .navigationBarTitle(Text("Being Monitored"))
+                            .navigationBarItems(trailing:
+
+                            HStack {
+
+                                Button("Contact Tracing") {
+                                    self.isModal = true
+                                }.sheet(isPresented: $isModal, content: {
+                                    ContactTraceSearch()
+                                })
+                            })
+                            
+                            
                        .alert(isPresented: $showLandingPageAlert) {
                         Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Proactive Monitoring using real time data and artificial intelligence."), dismissButton: .default(Text("Ok")))
                         }

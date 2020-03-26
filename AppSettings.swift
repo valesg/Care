@@ -22,7 +22,7 @@ struct AppSettings: View {
                     Text(" ")
                     
                     Toggle(isOn: $sameGender) {
-                    Text("Caregiver's gender must be the same as patient")
+                    Text("Caregiver must be of same gender as Me")
                     }
                     
                     Toggle(isOn: $onDuty) {

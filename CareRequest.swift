@@ -44,7 +44,7 @@ struct CareRequest: View {
                 }
                }
             }
-            .navigationBarTitle(Text("My Care Requests"))
+            .navigationBarTitle(Text("Tender Care Requests"))
                     
             .navigationBarItems(trailing:
 
@@ -58,7 +58,7 @@ struct CareRequest: View {
             })
                     
                .alert(isPresented: $showLandingPageAlert) {
-                Alert(title: Text("CareDrum - Health Info and Event Management"), message: Text("Connecting patients and caregivers. View care requests assigned to you or that you requested."), dismissButton: .default(Text("Ok")))
+                Alert(title: Text("Tender by CareDrum - Health Info and Event Management"), message: Text("Connecting patients and caregivers. View care requests that you requested."), dismissButton: .default(Text("Ok")))
                 }
             }
         }

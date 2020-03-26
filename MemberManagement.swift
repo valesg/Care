@@ -13,7 +13,7 @@ struct MemberManagement: View {
             @Environment(\.presentationMode) var presentationMode
             var jobTitle = ["Nurse", "PSW", "RNA"]
             var licenseIssuer = ["Ontario", "Quebec", "Alberta"]
-            var profileType = ["Patient", "Caregiver", "Care Manager"]
+            var profileType = ["Patient"]
             var gender = ["Female", "Male"]
             @State var adHocMsg: String = "This is an Ad-hoc message"
             @State private var selectedJobTitle = 0
@@ -31,13 +31,13 @@ struct MemberManagement: View {
             var body: some View {
                 NavigationView {
                     Form {
-                        Section {
-                            Picker(selection: $selectedProfile, label: Text("Select your Profile")) {
-                            ForEach(0..<profileType.count) {
-                            Text(self.profileType[$0])
-                                                    }
-                                                }
-                        }
+//                        Section {
+//                            Picker(selection: $selectedProfile, label: Text("Select your Profile")) {
+//                            ForEach(0..<profileType.count) {
+//                            Text(self.profileType[$0])
+//                                                    }
+//                                                }
+//                        }
                         Section {
                             TextField("First Name", text: $firstName)
                             TextField("Last Name", text: $lastName)

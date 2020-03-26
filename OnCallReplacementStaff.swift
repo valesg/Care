@@ -36,7 +36,7 @@ struct OnCallReplacementStaff: View {
                     }
                    }
                 }
-                .navigationBarTitle(Text("My OnCall Group"))
+                .navigationBarTitle(Text("My iLike Group"))
                  .navigationBarItems(trailing:
 
                             HStack {

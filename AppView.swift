@@ -14,18 +14,17 @@ struct AppView: View {
     
     var body: some View {
         TabView(selection: $selected) {
+            CareRequest(careRequests: testData).tabItem({
+                Image(systemName: "square.and.pencil")
+                    .font(.title)
+                Text("Care Request")
+            }).tag(2)
             
             OnCallReplacementStaff(allOnCallCandidates: onCallStaffTestData).tabItem({
                 Image(systemName: "person.3.fill")
                     .font(.title)
                 Text("Group Mgmt")
             }).tag(1)
-            
-                CareRequest(careRequests: testData).tabItem({
-                Image(systemName: "square.and.pencil")
-                    .font(.title)
-                Text("Care Request")
-            }).tag(2)
 
             PatientMonitor(allPatientMonitorCandidates: patientMonitorTestData).tabItem({
                 Image(systemName: "eye")
